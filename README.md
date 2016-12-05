@@ -1,4 +1,4 @@
-# BashingAlarm
+# BashingTimer`
 
 [What]  
 This is just a simple bash script that sleeps based on user input for time, and display a customized message when the program wakes up.
@@ -26,7 +26,7 @@ I would suggest aliasing the script so that it can be run as a global util. To d
 For example,  
 ```
 # Users specific aliases and functions
-alias alarm="PATH_TO_FOLDER/alarm.sh"
+alias timer="PATH_TO_FOLDER/alarm.sh"
 ```
 
 [Why]  
