@@ -1,30 +1,55 @@
 #!/bin/bash
+# Author: Anh Vu Nguyen
+# Simple alarm in bash script
 
+# ------------------------------------ #
+# String for helppage that users might need
+help="$(basename "$0") [-h] [-t -m] -- program to remind you with a customized message
+
+where:
+	-t set the countdown clock
+	-m set the customized message when the alarm sounds"
 
 # ------------------------------------ #
 # Taking care of input from cli
-args=`getopt -o t:m: -- "$@"`
-if test $? != 0
-     then
-         echo 'Usage: -t time -m message'
-         exit 1
-fi
-eval set -- "$args"
-for i
+while [[ $# -gt 0 ]]
 do
-  case "$i" in
-        -t) shift;time=$1;shift;;
-        -m) shift;message=$1;;
-  esac
+key="$1"
+
+HELP=false
+
+case $key in
+	-t|--time)
+	TIME="$2"
+	shift
+	;;
+	-m|--message)
+	MESSAGE="$2"
+	shift
+	;;
+	-h|--help)
+	HELP=true
+	;;
+	*)
+
+	;;
+esac
+shift
 done
 
-echo "You have chosen to set arlam for the next $time"
-echo "You will see '$message' when time is up"
+if ${HELP}
+	then
+		echo $help
+		exit 1;
+fi
+
+echo "You have chosen to set arlam for the next ${TIME}"
+echo "You will see '${MESSAGE}' when time is up"
 
 # ------------------------------------ # 
 # Method to call
 function sleepMethod {
-	sleep $time && echo $message
+	sleep ${TIME} && echo ${MESSAGE}
 }
 
 
