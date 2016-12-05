@@ -10,10 +10,11 @@ The terminal program is as follow:
 ```
 where TIME is how much you want the alarm to sleep for. e.g. 1s = 1 second. 1m = 1 minutes. 1d = 1 day. MESSAGE on the other hand is the customized message that you want to see. e.g. "Hello there".  
 Options for parameters include:    
-	-t --time   : Set the countdown clock  
-	-m --message: Set the customized message when clock sounds  
-	-h --help   : Display short help section  
- 
+<blockquote>	
+<p>-t --time   : Set the countdown clock  </p>
+<p>-m --message: Set the customized message when clock sounds  </p>
+<p>-h --help   : Display short help section </p>  
+</blockquote>
 ```
 > ./alarm.sh -t 5s -m "Hello There"
 You have chosen to set arlam for the next 5s
