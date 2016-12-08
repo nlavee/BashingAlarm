@@ -43,7 +43,21 @@ if ${HELP}
 		exit 1;
 fi
 
-echo "You have chosen to set arlam for the next ${TIME}"
+# ------------------------------------ # 
+# Parsing of time
+if [[ "$TIME" =~ ^(.)([sS])$ ]]; then
+		TIME_PARSED="${BASH_REMATCH[1]} second(s)"
+elif [[ "$TIME" =~ ^(.)([mM])$ ]]; then
+		TIME_PARSED="${BASH_REMATCH[1]} minute(s)"
+elif [[ "$TIME" =~ ^(.)([hH])$ ]]; then
+		TIME_PARSED="${BASH_REMATCH[1]} hour(s)"
+elif [[ "$TIME" =~ ^(.)([dD])$ ]]; then
+		TIME_PARSED="${BASH_REMATCH[1]} day(s)"
+else
+		TIME_PARSED="$TIME"
+fi
+
+echo "You have chosen to set arlam for the next ${TIME_PARSED}"
 echo "You will see '${MESSAGE}' when time is up"
 
 # ------------------------------------ # 
