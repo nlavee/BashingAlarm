@@ -63,7 +63,8 @@ echo "You will see '${MESSAGE}' when time is up"
 # ------------------------------------ # 
 # Method to call
 function sleepMethod {
-	sleep ${TIME} && echo ${MESSAGE}
+	# Sleep for the amount of specified time, then display message and make a sound
+	sleep ${TIME} && echo ${MESSAGE} && echo $'\a'
 }
 
 
