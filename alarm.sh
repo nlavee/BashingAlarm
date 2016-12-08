@@ -57,7 +57,7 @@ else
 		TIME_PARSED="$TIME"
 fi
 
-echo "You have chosen to set arlam for the next ${TIME_PARSED}"
+echo "You have set a timer for ${TIME_PARSED}"
 echo "You will see '${MESSAGE}' when time is up"
 
 # ------------------------------------ # 
